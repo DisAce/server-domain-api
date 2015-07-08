@@ -22,11 +22,11 @@ import java.math.BigDecimal;
  */
 public class BaseSupplierUnion implements Serializable  {
 
+	
 	/**  
 	* @Fields serialVersionUID : TODO 
 	*/
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -6314648759277910896L;
 	private String id;
 	private String supplierId;
 	private BigDecimal price;
@@ -86,6 +86,28 @@ public class BaseSupplierUnion implements Serializable  {
 		this.prices = prices;
 	}
 	
-	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseSupplierUnion [id=");
+        builder.append(id);
+        builder.append(", supplierId=");
+        builder.append(supplierId);
+        builder.append(", price=");
+        builder.append(price);
+        builder.append(", prices=");
+        builder.append(prices);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", remarks=");
+        builder.append(remarks);
+        builder.append(", isDelete=");
+        builder.append(isDelete);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append("]");
+        return builder.toString();
+    }
 	
 }

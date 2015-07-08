@@ -22,11 +22,11 @@ import java.io.Serializable;
 public class BaseShipment implements Serializable
 {
 
+	
 	/**  
 	* @Fields serialVersionUID : TODO 
 	*/
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -7487577896146069393L;
 	private String id;
 	private String name;
 	private String address;
@@ -92,6 +92,26 @@ public class BaseShipment implements Serializable
 		this.createTime = createTime;
 	}
 	
-	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseShipment [id=");
+        builder.append(id);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", address=");
+        builder.append(address);
+        builder.append(", telephone=");
+        builder.append(telephone);
+        builder.append(", remarks=");
+        builder.append(remarks);
+        builder.append(", isDelete=");
+        builder.append(isDelete);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append("]");
+        return builder.toString();
+    }
 
 }

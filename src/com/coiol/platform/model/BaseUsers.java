@@ -16,7 +16,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class BaseUsers  implements Serializable
 {
 
-	private static final long serialVersionUID = 1L;
+	/**  
+	* @Fields serialVersionUID : TODO 
+	*/
+	private static final long serialVersionUID = 9203318547224342000L;
 	private String userId;   //用户ID
 	private String account;  //用户登录帐号
 	private String password; //登录密码
@@ -177,4 +180,37 @@ public class BaseUsers  implements Serializable
 		this.createTime = createTime;
 	}
 	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseUsers [userId=");
+        builder.append(userId);
+        builder.append(", account=");
+        builder.append(account);
+        builder.append(", password=");
+        builder.append(password);
+        builder.append(", realName=");
+        builder.append(realName);
+        builder.append(", sex=");
+        builder.append(sex);
+        builder.append(", email=");
+        builder.append(email);
+        builder.append(", mobile=");
+        builder.append(mobile);
+        builder.append(", officePhone=");
+        builder.append(officePhone);
+        builder.append(", errorCount=");
+        builder.append(errorCount);
+        builder.append(", lastLoginTime=");
+        builder.append(lastLoginTime);
+        builder.append(", lastLoginIp=");
+        builder.append(lastLoginIp);
+        builder.append(", isAdmin=");
+        builder.append(isAdmin);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append("]");
+        return builder.toString();
+    }
 }

@@ -1,19 +1,17 @@
-// Jad home page: http://www.coiol.com
-// Decompiler options: packimports(3) fieldsfirst ansi space 
-// Source File Name:   ClassLoaderUtil.java
+
 
 package com.coiol.platform.common.util;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.coiol.platform.common.util.log.PlatFormLogger;
+import com.coiol.platform.common.util.log.PlatFormLoggerFactory;
 
 public class ClassLoaderUtil {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(ClassLoaderUtil.class);
+	private static final PlatFormLogger logger = PlatFormLoggerFactory
+			.getPlatFormLogger(ClassLoaderUtil.class);
 
 	public ClassLoaderUtil() {
 	}

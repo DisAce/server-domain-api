@@ -21,11 +21,11 @@ import java.io.Serializable;
  */
 public class BaseSupplier implements Serializable {
 
+	
 	/**  
 	* @Fields serialVersionUID : TODO 
 	*/
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -5642916492059208227L;
 	private String id;
 	private String name;
 	private String address;
@@ -78,7 +78,26 @@ public class BaseSupplier implements Serializable {
 		this.isDelete = isDelete;
 	}
 
-	
-	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseSupplier [id=");
+        builder.append(id);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", address=");
+        builder.append(address);
+        builder.append(", telephone=");
+        builder.append(telephone);
+        builder.append(", remarks=");
+        builder.append(remarks);
+        builder.append(", isDelete=");
+        builder.append(isDelete);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append("]");
+        return builder.toString();
+    }
 
 }

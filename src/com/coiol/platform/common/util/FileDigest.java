@@ -8,12 +8,12 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.coiol.platform.common.util.log.PlatFormLogger;
+import com.coiol.platform.common.util.log.PlatFormLoggerFactory;
 
 public class FileDigest {
-	private static final Logger logger = LoggerFactory
-			.getLogger(FileDigest.class);
+	private static final PlatFormLogger logger = PlatFormLoggerFactory
+			.getPlatFormLogger(FileDigest.class);
 
 	public static String getFileMD5(File file) {
 		if (!file.isFile()) {

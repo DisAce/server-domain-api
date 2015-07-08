@@ -34,4 +34,19 @@ public class Company implements Serializable{
 		this.age = age;
 	}
 	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Company [id=");
+        builder.append(id);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", code=");
+        builder.append(code);
+        builder.append(", age=");
+        builder.append(age);
+        builder.append("]");
+        return builder.toString();
+    }
 }

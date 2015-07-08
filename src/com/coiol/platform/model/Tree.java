@@ -9,7 +9,10 @@ public class Tree
 	implements Serializable
 {
 
-	private static final long serialVersionUID = 1L;
+	/**  
+	* @Fields serialVersionUID : TODO 
+	*/
+	private static final long serialVersionUID = 3850086443915388834L;
 	private String id;
 	private String name;
 	private Integer type;

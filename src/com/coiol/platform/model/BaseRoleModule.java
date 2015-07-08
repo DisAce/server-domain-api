@@ -8,7 +8,10 @@ public class BaseRoleModule
 	implements Serializable
 {
 
-	private static final long serialVersionUID = 1L;
+	/**  
+	* @Fields serialVersionUID : TODO 
+	*/
+	private static final long serialVersionUID = 8078427499490104508L;
 	private String roleModuleId;
 	private String roleId;
 	private String moduleIdFun;
@@ -64,7 +67,22 @@ public class BaseRoleModule
 		this.createTime = createTime;
 	}
 
-	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseRoleModule [roleModuleId=");
+        builder.append(roleModuleId);
+        builder.append(", roleId=");
+        builder.append(roleId);
+        builder.append(", moduleIdFun=");
+        builder.append(moduleIdFun);
+        builder.append(", moduleId=");
+        builder.append(moduleId);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append("]");
+        return builder.toString();
+    }
 
-	
 }

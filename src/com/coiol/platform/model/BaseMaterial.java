@@ -26,7 +26,7 @@ public class BaseMaterial implements Serializable {
 	/**  
 	* @Fields serialVersionUID : TODO 
 	*/
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -8442122060164286637L;
 
 	private String id; //ID
 	private BigDecimal total; //总金额
@@ -128,5 +128,39 @@ public class BaseMaterial implements Serializable {
 	}
 	
 	
-	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseMaterial [id=");
+        builder.append(id);
+        builder.append(", total=");
+        builder.append(total);
+        builder.append(", weight=");
+        builder.append(weight);
+        builder.append(", num=");
+        builder.append(num);
+        builder.append(", priceId=");
+        builder.append(priceId);
+        builder.append(", supplierId=");
+        builder.append(supplierId);
+        builder.append(", singleTotal=");
+        builder.append(singleTotal);
+        builder.append(", singlePrice=");
+        builder.append(singlePrice);
+        builder.append(", remarks=");
+        builder.append(remarks);
+        builder.append(", isDelete=");
+        builder.append(isDelete);
+        builder.append(", date=");
+        builder.append(date);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append(", baseSupplierPrice=");
+        builder.append(baseSupplierPrice);
+        builder.append(", baseSupplier=");
+        builder.append(baseSupplier);
+        builder.append("]");
+        return builder.toString();
+    }
 }

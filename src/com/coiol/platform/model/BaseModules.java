@@ -10,7 +10,10 @@ public class BaseModules
 	implements Serializable
 {
 
-	private static final long serialVersionUID = 1L;
+	/**  
+	* @Fields serialVersionUID : TODO 
+	*/
+	private static final long serialVersionUID = -8642256759361252362L;
 	private String id;
 	private String name;
 	private String moduleUrl;
@@ -176,4 +179,44 @@ public class BaseModules
 	{
 		this.information = information;
 	}
+	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseModules [id=");
+        builder.append(id);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", moduleUrl=");
+        builder.append(moduleUrl);
+        builder.append(", parent=");
+        builder.append(parent);
+        builder.append(", level=");
+        builder.append(level);
+        builder.append(", leaf=");
+        builder.append(leaf);
+        builder.append(", loaded=");
+        builder.append(loaded);
+        builder.append(", expanded=");
+        builder.append(expanded);
+        builder.append(", displayIndex=");
+        builder.append(displayIndex);
+        builder.append(", isDisplay=");
+        builder.append(isDisplay);
+        builder.append(", enModuleName=");
+        builder.append(enModuleName);
+        builder.append(", iconCss=");
+        builder.append(iconCss);
+        builder.append(", type=");
+        builder.append(type);
+        builder.append(", button=");
+        builder.append(button);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append(", information=");
+        builder.append(information);
+        builder.append("]");
+        return builder.toString();
+    }
 }

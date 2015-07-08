@@ -22,12 +22,12 @@ import java.math.BigDecimal;
  */
 public class BaseMaterialUnion implements Serializable {
 
+	
+	
 	/**  
 	* @Fields serialVersionUID : TODO 
 	*/
-	private static final long serialVersionUID = 1L;
-	
-	
+	private static final long serialVersionUID = -426478971828995803L;
 	private String id; //ID
 	private BigDecimal total; //总金额
 	private BigDecimal weight; //总重量
@@ -128,5 +128,38 @@ public class BaseMaterialUnion implements Serializable {
 		this.date = date;
 	}
 	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseMaterialUnion [id=");
+        builder.append(id);
+        builder.append(", total=");
+        builder.append(total);
+        builder.append(", weight=");
+        builder.append(weight);
+        builder.append(", num=");
+        builder.append(num);
+        builder.append(", priceId=");
+        builder.append(priceId);
+        builder.append(", singleTotal=");
+        builder.append(singleTotal);
+        builder.append(", singlePrice=");
+        builder.append(singlePrice);
+        builder.append(", remarks=");
+        builder.append(remarks);
+        builder.append(", isDelete=");
+        builder.append(isDelete);
+        builder.append(", date=");
+        builder.append(date);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append(", supplierId=");
+        builder.append(supplierId);
+        builder.append(", price=");
+        builder.append(price);
+        builder.append("]");
+        return builder.toString();
+    }
 
 }

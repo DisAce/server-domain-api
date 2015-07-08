@@ -9,7 +9,10 @@ public class BaseRoles
 	implements Serializable
 {
 
-	private static final long serialVersionUID = 1L;
+	/**  
+	* @Fields serialVersionUID : TODO 
+	*/
+	private static final long serialVersionUID = 2797944101816762636L;
 	private String roleId;
 	private String roleName;
 	private String roleDesc;
@@ -57,4 +60,19 @@ public class BaseRoles
 		this.createTime = createTime;
 	}
 	
+	@Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("BaseRoles [roleId=");
+        builder.append(roleId);
+        builder.append(", roleName=");
+        builder.append(roleName);
+        builder.append(", roleDesc=");
+        builder.append(roleDesc);
+        builder.append(", createTime=");
+        builder.append(createTime);
+        builder.append("]");
+        return builder.toString();
+    }
 }

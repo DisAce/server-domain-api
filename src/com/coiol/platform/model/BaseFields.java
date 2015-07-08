@@ -8,7 +8,10 @@ public class BaseFields
 	implements Serializable 
 {
 
-	private static final long serialVersionUID = 1L;
+	/**  
+	* @Fields serialVersionUID : TODO 
+	*/
+	private static final long serialVersionUID = -7753289426540672133L;
 	private String fieldId;
 	private String field;
 	private String fieldName;
@@ -90,4 +93,26 @@ public class BaseFields
 	{
 		this.sort = sort;
 	}
+	
+	 	@Override
+	    public String toString()
+	    {
+	        StringBuilder builder = new StringBuilder();
+	        builder.append("BaseFields [fieldId=");
+	        builder.append(fieldId);
+	        builder.append(", field=");
+	        builder.append(field);
+	        builder.append(", fieldName=");
+	        builder.append(fieldName);
+	        builder.append(", valueField=");
+	        builder.append(valueField);
+	        builder.append(", displayField=");
+	        builder.append(displayField);
+	        builder.append(", enabled=");
+	        builder.append(enabled);
+	        builder.append(", sort=");
+	        builder.append(sort);
+	        builder.append("]");
+	        return builder.toString();
+	    }
 }
