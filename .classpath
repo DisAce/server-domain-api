@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="E:/Workspaces/MyEclipse 8.5/Platform/WebRoot/WEB-INF/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="E:/Workspaces/MyEclipse 8.5/Platform/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="E:/Workspaces/MyEclipse 8.5/Platform/WebRoot/WEB-INF/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="E:/repository/org/springframework/spring-core/4.1.0.RELEASE/spring-core-4.1.0.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
