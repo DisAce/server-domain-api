@@ -39,8 +39,9 @@ import java.util.Collections;
 import java.util.List;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.Assert;
-import com.coiol.platform.common.util.log.PlatFormLogger;
-import com.coiol.platform.common.util.log.PlatFormLoggerFactory;
+
+import com.coiol.platform.core.log.PlatFormLogger;
+import com.coiol.platform.core.log.PlatFormLoggerFactory;
 
 /**
  * 文件操作类

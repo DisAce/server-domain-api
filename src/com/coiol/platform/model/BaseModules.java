@@ -3,9 +3,6 @@ package com.coiol.platform.model;
 
 import java.io.Serializable;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class BaseModules 
 	implements Serializable
 {
@@ -149,7 +146,6 @@ public class BaseModules
 		this.isDisplay = isDisplay;
 	}
 
-    @JsonIgnore
 	public String getEnModuleName()
 	{
 		return enModuleName;

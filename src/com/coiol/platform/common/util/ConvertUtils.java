@@ -10,9 +10,6 @@
  */
 package com.coiol.platform.common.util;
 
-import com.coiol.platform.common.util.log.PlatFormLogger;
-import com.coiol.platform.common.util.log.PlatFormLoggerFactory;
-
 /** 
  * @ClassName ConvertUtils  
  * @Description TODO 
@@ -22,8 +19,6 @@ import com.coiol.platform.common.util.log.PlatFormLoggerFactory;
  */
 public class ConvertUtils
 {
-
-	private static final PlatFormLogger LOG = PlatFormLoggerFactory.getPlatFormLogger(ConvertUtils.class);
 
     private ConvertUtils() {
     }

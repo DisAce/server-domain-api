@@ -8,7 +8,10 @@ import java.io.PrintWriter;
 public class TypeCastException extends RuntimeException
 {
 
-	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4072246334400925622L;
 	Throwable nested;
 
 	public TypeCastException()

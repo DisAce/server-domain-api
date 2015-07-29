@@ -18,7 +18,7 @@
  * 
  */
 
-package com.coiol.platform.common.util.log;
+package com.coiol.platform.core.log;
 
 import java.io.Serializable;
 import java.util.Locale;
@@ -58,6 +58,23 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
         }
         return locale.getLanguage().equalsIgnoreCase(specifyLocale.getLanguage());
     }
+    
+    private static String buildLogContextInfo()
+	  {
+	    long threadId = Thread.currentThread().getId();
+	    String staff = null;
+	    LogContext logContext = LogContextHolder.getLogContext();
+	    if (logContext != null) {
+	      staff = logContext.getStaff();
+	    }
+	    StringBuilder sb = new StringBuilder();
+	    sb.append("server-domain-api-logger:threadId=");
+	    sb.append(threadId);
+	    sb.append(",staff=");
+	    sb.append(staff);
+	    sb.append(",info=");
+	    return sb.toString();
+	  }
 
     @Override
     public void trace(String msg) {
@@ -203,12 +220,12 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     }
     @Override
     public void debug(String msg, Throwable t) {
-        debug(msg, t, Locale.CHINA);
+        debug(buildLogContextInfo()+msg, t, Locale.CHINA);
     }
     @Override
     public void debug(String msg, Throwable t, Locale locale) {
         if(shouldOutput(locale)){
-            log.debug(msg, t);
+            log.debug(buildLogContextInfo() + msg, t);
         }
     }
     @Override
@@ -218,7 +235,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void debug(Marker marker, String msg, Locale locale) {
         if(shouldOutput(locale)){
-            log.debug(marker, msg);
+            log.debug(buildLogContextInfo() + marker, msg);
         }
     }
     @Override
@@ -228,7 +245,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void debug(Marker marker, String format, Object arg, Locale locale) {
         if(shouldOutput(locale)){
-            log.debug(marker, format, arg);
+            log.debug(buildLogContextInfo() +marker, format, arg);
         }
     }
     @Override
@@ -248,7 +265,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void debug(Marker marker, String format, Object[] argArray, Locale locale) {
         if(shouldOutput(locale)){
-            log.debug(marker, format, argArray);
+            log.debug(buildLogContextInfo() + marker, format, argArray);
         }
     }
     @Override
@@ -258,7 +275,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void debug(Marker marker, String msg, Throwable t, Locale locale) {
         if(shouldOutput(locale)){
-            log.debug(marker, msg, t);
+            log.debug(buildLogContextInfo() + marker, msg, t);
         }
     }    
     
@@ -270,7 +287,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(String msg, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(msg);
+            log.info(buildLogContextInfo() + msg);
         }
     }
     @Override
@@ -280,7 +297,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(String format, Object arg, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(format, arg);
+            log.info(buildLogContextInfo() + format, arg);
         }
     }
     @Override
@@ -290,7 +307,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(String format, Object arg1, Object arg2, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(format, arg1, arg2);
+            log.info(buildLogContextInfo() + format, arg1, arg2);
         }
     }
     @Override
@@ -300,7 +317,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(String format, Object[] argArray, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(format, argArray);
+            log.info(buildLogContextInfo() + format, argArray);
         }
     }
     @Override
@@ -310,7 +327,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(String msg, Throwable t, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(msg, t);
+            log.info(buildLogContextInfo() + msg, t);
         }
     }
     @Override
@@ -320,7 +337,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(Marker marker, String msg, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(marker, msg);
+            log.info(buildLogContextInfo() + marker, msg);
         }
     }
     @Override
@@ -330,7 +347,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(Marker marker, String format, Object arg, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(marker, format, arg);
+            log.info(buildLogContextInfo() + marker, format, arg);
         }
     }
     @Override
@@ -350,7 +367,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(Marker marker, String format, Object[] argArray, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(marker, format, argArray);
+            log.info(buildLogContextInfo() + marker, format, argArray);
         }
     }
     @Override
@@ -360,7 +377,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void info(Marker marker, String msg, Throwable t, Locale locale) {
         if(shouldOutput(locale)){
-            log.info(marker, msg, t);
+            log.info(buildLogContextInfo() + marker, msg, t);
         }
     }    
     
@@ -372,7 +389,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(String msg, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(msg);
+            log.warn(buildLogContextInfo() + msg);
         }
     }
     @Override
@@ -382,7 +399,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(String format, Object arg, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(format, arg);
+            log.warn(buildLogContextInfo() + format, arg);
         }
     }
     @Override
@@ -392,7 +409,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(String format, Object arg1, Object arg2, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(format, arg1, arg2);
+            log.warn(buildLogContextInfo() + format, arg1, arg2);
         }
     }
     @Override
@@ -402,7 +419,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(String format, Object[] argArray, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(format, argArray);
+            log.warn(buildLogContextInfo() + format, argArray);
         }
     }
     @Override
@@ -422,7 +439,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(Marker marker, String msg, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(marker, msg);
+            log.warn(buildLogContextInfo() + marker, msg);
         }
     }
     @Override
@@ -432,7 +449,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(Marker marker, String format, Object arg, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(marker, format, arg);
+            log.warn(buildLogContextInfo() + marker, format, arg);
         }
     }
     @Override
@@ -452,7 +469,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(Marker marker, String format, Object[] argArray, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(marker, format, argArray);
+            log.warn(buildLogContextInfo() + marker, format, argArray);
         }
     }
     @Override
@@ -462,7 +479,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void warn(Marker marker, String msg, Throwable t, Locale locale) {
         if(shouldOutput(locale)){
-            log.warn(marker, msg, t);
+            log.warn(buildLogContextInfo() + marker, msg, t);
         }
     }    
     
@@ -474,7 +491,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(String msg, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(msg);
+            log.error(buildLogContextInfo() + msg);
         }
     }
     @Override
@@ -484,7 +501,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(String format, Object arg, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(format, arg);
+            log.error(buildLogContextInfo() + format, arg);
         }
     }
     @Override
@@ -494,7 +511,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(String format, Object arg1, Object arg2, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(format, arg1, arg2);
+            log.error(buildLogContextInfo() + format, arg1, arg2);
         }
     }
     @Override
@@ -504,7 +521,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(String format, Object[] argArray, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(format, argArray);
+            log.error(buildLogContextInfo() + format, argArray);
         }
     }
     @Override
@@ -514,7 +531,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(String msg, Throwable t, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(msg, t);
+            log.error(buildLogContextInfo() + msg, t);
         }
     }
     @Override
@@ -524,7 +541,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(Marker marker, String msg, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(marker, msg);
+            log.error(buildLogContextInfo() + marker, msg);
         }
     }
     @Override
@@ -534,7 +551,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(Marker marker, String format, Object arg, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(marker, format, arg);
+            log.error(buildLogContextInfo() + marker, format, arg);
         }
     }
     @Override
@@ -554,7 +571,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(Marker marker, String format, Object[] argArray, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(marker, format, argArray);
+            log.error(buildLogContextInfo() + marker, format, argArray);
         }
     }
     @Override
@@ -564,7 +581,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     @Override
     public void error(Marker marker, String msg, Throwable t, Locale locale) {
         if(shouldOutput(locale)){
-            log.error(marker, msg, t);
+            log.error(buildLogContextInfo() + marker, msg, t);
         }
     }    
     

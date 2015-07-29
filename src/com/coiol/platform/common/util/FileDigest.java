@@ -8,8 +8,9 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
-import com.coiol.platform.common.util.log.PlatFormLogger;
-import com.coiol.platform.common.util.log.PlatFormLoggerFactory;
+
+import com.coiol.platform.core.log.PlatFormLogger;
+import com.coiol.platform.core.log.PlatFormLoggerFactory;
 
 public class FileDigest {
 	private static final PlatFormLogger logger = PlatFormLoggerFactory

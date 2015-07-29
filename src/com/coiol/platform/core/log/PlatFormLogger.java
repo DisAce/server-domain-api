@@ -18,7 +18,7 @@
  * 
  */
 
-package com.coiol.platform.common.util.log;
+package com.coiol.platform.core.log;
 
 import java.util.Locale;
 import org.slf4j.Logger;

@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.coiol.platform.core.log.PlatFormLogger;
+import com.coiol.platform.core.log.PlatFormLoggerFactory;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -17,8 +16,8 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 
 public class JackJson {
-	private static final Logger logger = LoggerFactory
-			.getLogger(JackJson.class);
+	private static final PlatFormLogger logger = PlatFormLoggerFactory
+			.getPlatFormLogger(JackJson.class);
 	@SuppressWarnings("unused")
 	private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 

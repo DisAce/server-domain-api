@@ -9,10 +9,8 @@ package com.coiol.platform.model;
 import java.io.Serializable;
 import java.util.Date;
 
-
+import com.alibaba.fastjson.annotation.JSONType;
 import com.coiol.platform.common.jackjson.CustomDateTimeSerializer;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class BaseUsers  implements Serializable
 {
 
@@ -69,7 +67,6 @@ public class BaseUsers  implements Serializable
 		this.account = account;
 	}
 
-    @JsonIgnore
 	public String getPassword()
 	{
 		return password;
@@ -141,7 +138,6 @@ public class BaseUsers  implements Serializable
 		this.errorCount = errorCount;
 	}
 	
-    @JsonSerialize(using=CustomDateTimeSerializer.class)
 	public Date getLastLoginTime()
 	{
 		return lastLoginTime;

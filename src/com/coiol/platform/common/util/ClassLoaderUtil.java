@@ -5,8 +5,9 @@ package com.coiol.platform.common.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import com.coiol.platform.common.util.log.PlatFormLogger;
-import com.coiol.platform.common.util.log.PlatFormLoggerFactory;
+
+import com.coiol.platform.core.log.PlatFormLogger;
+import com.coiol.platform.core.log.PlatFormLoggerFactory;
 
 public class ClassLoaderUtil {
 
