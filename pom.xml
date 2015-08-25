@@ -24,7 +24,7 @@
   <packaging>jar</packaging>
 
   <name>server-domain-api</name>
-  <groupId>com.coiol.platform</groupId>
+  <groupId>org.coiol.platform</groupId>
   <artifactId>server-domain-api</artifactId>
   <version>1.0</version> 
     

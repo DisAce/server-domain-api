@@ -4,8 +4,7 @@ package org.coiol.platform.core.model;
 
 import java.io.Serializable;
 
-public class BaseFields
-	implements Serializable 
+public class BaseFields implements Serializable 
 {
 
 	/**  
@@ -19,10 +18,6 @@ public class BaseFields
 	private String displayField;
 	private Short enabled;
 	private Short sort;
-
-	public BaseFields()
-	{
-	}
 
 	public String getFieldId()
 	{
@@ -93,26 +88,11 @@ public class BaseFields
 	{
 		this.sort = sort;
 	}
+
+	@Override
+	public String toString() {
+		return "BaseFields [fieldId=" + fieldId + ", field=" + field + ", fieldName=" + fieldName + ", valueField="
+				+ valueField + ", displayField=" + displayField + ", enabled=" + enabled + ", sort=" + sort + "]";
+	}
 	
-	 	@Override
-	    public String toString()
-	    {
-	        StringBuilder builder = new StringBuilder();
-	        builder.append("BaseFields [fieldId=");
-	        builder.append(fieldId);
-	        builder.append(", field=");
-	        builder.append(field);
-	        builder.append(", fieldName=");
-	        builder.append(fieldName);
-	        builder.append(", valueField=");
-	        builder.append(valueField);
-	        builder.append(", displayField=");
-	        builder.append(displayField);
-	        builder.append(", enabled=");
-	        builder.append(enabled);
-	        builder.append(", sort=");
-	        builder.append(sort);
-	        builder.append("]");
-	        return builder.toString();
-	    }
 }

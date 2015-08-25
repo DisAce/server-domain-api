@@ -25,8 +25,6 @@ import java.util.regex.Pattern;
 public class SqlSegment
 {
 
-	private static final String Crlf = "@";
-	  private static final String FourSpace = "　　";
 	  private String start;
 	  private String body;
 	  private String end;
@@ -42,7 +40,7 @@ public class SqlSegment
 	    this.end = "";
 	    this.segmentRegExp = segmentRegExp;
 	    this.bodySplitPattern = bodySplitPattern;
-	    this.bodyPieces = new ArrayList();
+	    this.bodyPieces = new ArrayList<String>();
 	  }
 
 	  public void parse(String sql)
@@ -68,7 +66,7 @@ public class SqlSegment
 
 	  private void parseBody()
 	  {
-	    List ls = new ArrayList();
+	    List<String> ls = new ArrayList<String>();
 	    Pattern p = Pattern.compile(this.bodySplitPattern, 2);
 
 	    this.body = this.body.trim();

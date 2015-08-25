@@ -2,7 +2,7 @@
 package org.coiol.platform.core.constant;
 
 /**
- * 响应码
+ * 系统全局响应码
  * 
  * @author master@coiol.com
  * @version V 1.0.0.0
@@ -14,17 +14,7 @@ public interface ResultCode
 	/**
 	 * 成功标识
 	 */
-	String SUCCESS_CODE = "0";
-
-	/**
-	 * 成功
-	 */
 	int SUCCESS = 200;
-
-	/**
-	 * 系统其他错误
-	 */
-	int EXTRA_ERROR = -1;
 
 	/**
 	 * 暂不支持此业务

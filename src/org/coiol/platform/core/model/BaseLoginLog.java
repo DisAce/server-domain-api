@@ -9,6 +9,7 @@ public class BaseLoginLog implements Serializable {
 	* @Fields serialVersionUID : TODO 
 	*/
 	private static final long serialVersionUID = -2366232709451526872L;
+	
 	private String id; //主键
     private String username; //用户名
     private String password; //密码
@@ -208,31 +209,11 @@ public class BaseLoginLog implements Serializable {
 	public void setMsg(String msg){
 	   this.msg=msg;
 	}
-    
-
+	
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseLoginLog [id=");
-        builder.append(id);
-        builder.append(", username=");
-        builder.append(username);
-        builder.append(", password=");
-        builder.append(password);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append(", ip=");
-        builder.append(ip);
-        builder.append(", userAgent=");
-        builder.append(userAgent);
-        builder.append(", status=");
-        builder.append(status);
-        builder.append(", msg=");
-        builder.append(msg);
-        builder.append("]");
-        return builder.toString();
-    }
-   
+	public String toString() {
+		return "BaseLoginLog [id=" + id + ", username=" + username + ", password=" + password + ", createTime="
+				+ createTime + ", ip=" + ip + ", userAgent=" + userAgent + ", status=" + status + ", msg=" + msg + "]";
+	}
 
 }

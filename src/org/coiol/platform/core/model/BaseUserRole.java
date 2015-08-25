@@ -18,10 +18,6 @@ public class BaseUserRole
 	private String roleId;
 	private String createTime;
 
-	public BaseUserRole()
-	{
-	}
-
 	public String getUserId()
 	{
 		return userId;
@@ -65,20 +61,11 @@ public class BaseUserRole
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
-	
+
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseUserRole [id=");
-        builder.append(id);
-        builder.append(", userId=");
-        builder.append(userId);
-        builder.append(", roleId=");
-        builder.append(roleId);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseUserRole [id=" + id + ", userId=" + userId + ", roleId=" + roleId + ", createTime=" + createTime
+				+ "]";
+	}
+	
 }

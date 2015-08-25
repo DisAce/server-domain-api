@@ -93,25 +93,9 @@ public class BaseShipment implements Serializable
 	}
 	
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseShipment [id=");
-        builder.append(id);
-        builder.append(", name=");
-        builder.append(name);
-        builder.append(", address=");
-        builder.append(address);
-        builder.append(", telephone=");
-        builder.append(telephone);
-        builder.append(", remarks=");
-        builder.append(remarks);
-        builder.append(", isDelete=");
-        builder.append(isDelete);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append("]");
-        return builder.toString();
-    }
-
+	public String toString() {
+		return "BaseShipment [id=" + id + ", name=" + name + ", address=" + address + ", telephone=" + telephone
+				+ ", remarks=" + remarks + ", isDelete=" + isDelete + ", createTime=" + createTime + "]";
+	}
+	
 }

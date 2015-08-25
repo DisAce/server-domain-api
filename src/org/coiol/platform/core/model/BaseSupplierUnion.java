@@ -87,27 +87,10 @@ public class BaseSupplierUnion implements Serializable  {
 	}
 	
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseSupplierUnion [id=");
-        builder.append(id);
-        builder.append(", supplierId=");
-        builder.append(supplierId);
-        builder.append(", price=");
-        builder.append(price);
-        builder.append(", prices=");
-        builder.append(prices);
-        builder.append(", name=");
-        builder.append(name);
-        builder.append(", remarks=");
-        builder.append(remarks);
-        builder.append(", isDelete=");
-        builder.append(isDelete);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseSupplierUnion [id=" + id + ", supplierId=" + supplierId + ", price=" + price + ", prices=" + prices
+				+ ", remarks=" + remarks + ", name=" + name + ", isDelete=" + isDelete + ", createTime=" + createTime
+				+ "]";
+	}
 	
 }

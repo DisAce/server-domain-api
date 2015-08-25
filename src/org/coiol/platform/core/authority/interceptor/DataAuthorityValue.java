@@ -21,31 +21,31 @@ import java.util.HashMap;
  */
 public class DataAuthorityValue
 {
-	public static final ThreadLocal<HashMap> dataAuthority = new ThreadLocal();
+	public static final ThreadLocal<HashMap<?, ?>> dataAuthority = new ThreadLocal<HashMap<?, ?>>();
 
-	  public static final ThreadLocal<String> authorityItems = new ThreadLocal();
+	  public static final ThreadLocal<String> authorityItems = new ThreadLocal<String>();
 
-	  public static final ThreadLocal<String> authorityDataSource = new ThreadLocal();
+	  public static final ThreadLocal<String> authorityDataSource = new ThreadLocal<String>();
 
-	  public static final ThreadLocal<HashMap> authoritySql = new ThreadLocal();
+	  public static final ThreadLocal<HashMap> authoritySql = new ThreadLocal<HashMap>();
 
-	  public static final ThreadLocal<HashMap<String, HashMap>> tableKey = new ThreadLocal();
+	  public static final ThreadLocal<HashMap<String, HashMap>> tableKey = new ThreadLocal<HashMap<String, HashMap>>();
 
-	  public static final ThreadLocal<HashMap<String, HashMap>> valueKey = new ThreadLocal();
+	  public static final ThreadLocal<HashMap<String, HashMap>> valueKey = new ThreadLocal<HashMap<String, HashMap>>();
 
-	  public static HashMap getDataAuthority()
+	  public static HashMap<?, ?> getDataAuthority()
 	  {
-	    return (HashMap)dataAuthority.get();
+	    return dataAuthority.get();
 	  }
 
-	  public static void setDataAuthority(HashMap auths)
+	  public static void setDataAuthority(HashMap<?, ?> auths)
 	  {
 	    dataAuthority.set(auths);
 	  }
 
 	  public static String getAuthorityitems()
 	  {
-	    return (String)authorityItems.get();
+	    return authorityItems.get();
 	  }
 
 	  public static void setAuthorityitems(String items)
@@ -60,7 +60,7 @@ public class DataAuthorityValue
 
 	  public static String getAuthorityDataSource()
 	  {
-	    return (String)authorityDataSource.get();
+	    return authorityDataSource.get();
 	  }
 
 	  public static void setAuthoritySql(HashMap map)
@@ -70,7 +70,7 @@ public class DataAuthorityValue
 
 	  public static HashMap getAuthoritySql()
 	  {
-	    return (HashMap)authoritySql.get();
+	    return authoritySql.get();
 	  }
 
 	  public static void setTableKey(HashMap<String, HashMap> map)
@@ -80,7 +80,7 @@ public class DataAuthorityValue
 
 	  public static HashMap getTableKey()
 	  {
-	    return (HashMap)tableKey.get();
+	    return tableKey.get();
 	  }
 
 	  public static void setValueKey(HashMap<String, HashMap> map)
@@ -90,6 +90,6 @@ public class DataAuthorityValue
 
 	  public static HashMap getValueKey()
 	  {
-	    return (HashMap)valueKey.get();
+	    return valueKey.get();
 	  }
 }

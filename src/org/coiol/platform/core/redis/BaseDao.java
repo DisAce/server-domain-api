@@ -82,7 +82,7 @@ public class BaseDao
 	  @SuppressWarnings("unchecked")
 	public Set<String> getKeys(final String keyPattern)
 	  {
-	    return (Set)this.redisTemplate.execute(new RedisCallback<Object>()
+	    return (Set<String>)this.redisTemplate.execute(new RedisCallback<Object>()
 	    {
 	      public Object doInRedis(RedisConnection connection)
 	        throws DataAccessException

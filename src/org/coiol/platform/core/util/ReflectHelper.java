@@ -24,7 +24,7 @@ public class ReflectHelper
 
 	public static Field getFieldByFieldName(Object obj, String fieldName)
 	  {
-	    for (Class superClass = obj.getClass(); superClass != Object.class; ) {
+	    for (Class<?> superClass = obj.getClass(); superClass != Object.class; ) {
 	      try
 	      {
 	        return superClass.getDeclaredField(fieldName);

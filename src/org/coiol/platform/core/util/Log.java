@@ -25,7 +25,7 @@ public class Log
 {
 
 	  private ZbupLoggerWrapper log;
-	  private static final String defaultLogName = "com.zbiti.core.util.Log";
+	  private static final String defaultLogName = "org.coiol.platform.core.util.Log";
 
 	  private Log(String name)
 	  {
@@ -36,13 +36,13 @@ public class Log
 	  {
 	    String s = name;
 	    if (s == null)
-	      s = "com.zbiti.core.util.Log";
+	      s = "org.coiol.platform.core.util.Log";
 	    return new Log(s);
 	  }
 
 	  public static Log getLog(Class clazz)
 	  {
-	    String s = "com.zbiti.core.util.Log";
+	    String s = "org.coiol.platform.core.util.Log";
 	    if (clazz != null)
 	      s = clazz.getName();
 	    return getLog(s);

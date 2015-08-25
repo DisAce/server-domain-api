@@ -2,7 +2,6 @@
 * @Project: PlatFormCore 
 * @Title: LinkNode.java 
 * @Package com.coiol.platform.core.sqlParser 
-* @Description: TODO 
 * @author Yin MingXing master@coiol.com 
 * @date 2015年7月26日 上午9:54:24 
 * @Copyright: 2015  
@@ -46,7 +45,7 @@ public class LinkNode <T>
 	  public int size()
 	  {
 	    int size = 0;
-	    LinkNode cur = this;
+	    LinkNode<T> cur = this;
 	    while ((cur != null) && (cur.getNode() != null))
 	    {
 	      size++;

@@ -22,9 +22,8 @@ import org.slf4j.LoggerFactory;
  */
 public class ZbupLoggerWrapper
 {
-	private Logger _logger;
-	  private static final String defaultLogName = "com.zbiti.core.util.Log";
-
+	  private Logger _logger;
+	
 	  public ZbupLoggerWrapper(String name)
 	  {
 	    this._logger = LoggerFactory.getLogger(name);

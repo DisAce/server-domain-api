@@ -4,8 +4,7 @@ package org.coiol.platform.core.model;
 import java.io.Serializable;
 
 
-public class BaseRoleModule
-	implements Serializable
+public class BaseRoleModule implements Serializable
 {
 
 	/**  
@@ -18,10 +17,7 @@ public class BaseRoleModule
 	private String moduleId;
 	private String createTime;
 
-	public BaseRoleModule()
-	{
-	}
-
+	
 	public String getRoleModuleId()
 	{
 		return roleModuleId;
@@ -68,21 +64,9 @@ public class BaseRoleModule
 	}
 
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseRoleModule [roleModuleId=");
-        builder.append(roleModuleId);
-        builder.append(", roleId=");
-        builder.append(roleId);
-        builder.append(", moduleIdFun=");
-        builder.append(moduleIdFun);
-        builder.append(", moduleId=");
-        builder.append(moduleId);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseRoleModule [roleModuleId=" + roleModuleId + ", roleId=" + roleId + ", moduleIdFun=" + moduleIdFun
+				+ ", moduleId=" + moduleId + ", createTime=" + createTime + "]";
+	}
 
 }

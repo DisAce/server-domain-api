@@ -20,7 +20,7 @@ package org.coiol.platform.core.log;
 public class LogContextHolder
 {
 
-	private static final ThreadLocal<LogContext> logContextHolder = new InheritableThreadLocal();
+	private static final ThreadLocal<LogContext> logContextHolder = new InheritableThreadLocal<LogContext>();
 
 	  public static void clearLogContext() {
 	    setLogContext(null);

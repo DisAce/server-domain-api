@@ -22,8 +22,6 @@ import java.math.BigDecimal;
  */
 public class BaseMaterialUnion implements Serializable {
 
-	
-	
 	/**  
 	* @Fields serialVersionUID : TODO 
 	*/
@@ -129,37 +127,11 @@ public class BaseMaterialUnion implements Serializable {
 	}
 	
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseMaterialUnion [id=");
-        builder.append(id);
-        builder.append(", total=");
-        builder.append(total);
-        builder.append(", weight=");
-        builder.append(weight);
-        builder.append(", num=");
-        builder.append(num);
-        builder.append(", priceId=");
-        builder.append(priceId);
-        builder.append(", singleTotal=");
-        builder.append(singleTotal);
-        builder.append(", singlePrice=");
-        builder.append(singlePrice);
-        builder.append(", remarks=");
-        builder.append(remarks);
-        builder.append(", isDelete=");
-        builder.append(isDelete);
-        builder.append(", date=");
-        builder.append(date);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append(", supplierId=");
-        builder.append(supplierId);
-        builder.append(", price=");
-        builder.append(price);
-        builder.append("]");
-        return builder.toString();
-    }
-
+	public String toString() {
+		return "BaseMaterialUnion [id=" + id + ", total=" + total + ", weight=" + weight + ", num=" + num + ", priceId="
+				+ priceId + ", singleTotal=" + singleTotal + ", singlePrice=" + singlePrice + ", remarks=" + remarks
+				+ ", isDelete=" + isDelete + ", date=" + date + ", createTime=" + createTime + ", name=" + name
+				+ ", supplierId=" + supplierId + ", price=" + price + "]";
+	}
+	
 }

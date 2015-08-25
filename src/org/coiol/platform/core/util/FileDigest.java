@@ -13,8 +13,8 @@ import org.coiol.platform.core.log.PlatFormLogger;
 import org.coiol.platform.core.log.PlatFormLoggerFactory;
 
 public class FileDigest {
-	private static final PlatFormLogger logger = PlatFormLoggerFactory
-			.getPlatFormLogger(FileDigest.class);
+	
+	private static final PlatFormLogger logger = PlatFormLoggerFactory.getPlatFormLogger(FileDigest.class);
 
 	public static String getFileMD5(File file) {
 		if (!file.isFile()) {

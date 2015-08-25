@@ -3,8 +3,7 @@ package org.coiol.platform.core.model;
 
 import java.io.Serializable;
 
-public class BaseModules 
-	implements Serializable
+public class BaseModules implements Serializable
 {
 
 	/**  
@@ -175,44 +174,14 @@ public class BaseModules
 	{
 		this.information = information;
 	}
-	
+
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseModules [id=");
-        builder.append(id);
-        builder.append(", name=");
-        builder.append(name);
-        builder.append(", moduleUrl=");
-        builder.append(moduleUrl);
-        builder.append(", parent=");
-        builder.append(parent);
-        builder.append(", level=");
-        builder.append(level);
-        builder.append(", leaf=");
-        builder.append(leaf);
-        builder.append(", loaded=");
-        builder.append(loaded);
-        builder.append(", expanded=");
-        builder.append(expanded);
-        builder.append(", displayIndex=");
-        builder.append(displayIndex);
-        builder.append(", isDisplay=");
-        builder.append(isDisplay);
-        builder.append(", enModuleName=");
-        builder.append(enModuleName);
-        builder.append(", iconCss=");
-        builder.append(iconCss);
-        builder.append(", type=");
-        builder.append(type);
-        builder.append(", button=");
-        builder.append(button);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append(", information=");
-        builder.append(information);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseModules [id=" + id + ", name=" + name + ", moduleUrl=" + moduleUrl + ", parent=" + parent
+				+ ", level=" + level + ", leaf=" + leaf + ", loaded=" + loaded + ", expanded=" + expanded
+				+ ", displayIndex=" + displayIndex + ", isDisplay=" + isDisplay + ", enModuleName=" + enModuleName
+				+ ", iconCss=" + iconCss + ", type=" + type + ", button=" + button + ", createTime=" + createTime
+				+ ", information=" + information + "]";
+	}
+	
 }

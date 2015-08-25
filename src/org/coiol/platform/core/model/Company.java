@@ -9,6 +9,7 @@ public class Company implements Serializable{
 	private String name;
 	private String code;
 	private int age;
+	
 	public double getId() {
 		return id;
 	}
@@ -35,18 +36,8 @@ public class Company implements Serializable{
 	}
 	
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Company [id=");
-        builder.append(id);
-        builder.append(", name=");
-        builder.append(name);
-        builder.append(", code=");
-        builder.append(code);
-        builder.append(", age=");
-        builder.append(age);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "Company [id=" + id + ", name=" + name + ", code=" + code + ", age=" + age + "]";
+	}
+	
 }

@@ -27,7 +27,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class AuthenticationInterceptor extends HandlerInterceptorAdapter
 {
 
-	private List<String> mapping = new ArrayList();
+	private List<String> mapping = new ArrayList<String>();
 
 	  private String redirectUrl = "";
 

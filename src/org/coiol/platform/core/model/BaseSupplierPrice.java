@@ -35,6 +35,7 @@ public class BaseSupplierPrice implements Serializable  {
 	private Integer isDelete;
 	private String createTime;
 	private List<BaseSupplier> baseSupplier;
+	
 	public String getId() {
 		return id;
 	}
@@ -81,24 +82,9 @@ public class BaseSupplierPrice implements Serializable  {
 	}
 	
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseSupplierPrice [id=");
-        builder.append(id);
-        builder.append(", supplierId=");
-        builder.append(supplierId);
-        builder.append(", price=");
-        builder.append(price);
-        builder.append(", remarks=");
-        builder.append(remarks);
-        builder.append(", isDelete=");
-        builder.append(isDelete);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append(", baseSupplier=");
-        builder.append(baseSupplier);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseSupplierPrice [id=" + id + ", supplierId=" + supplierId + ", price=" + price + ", remarks="
+				+ remarks + ", isDelete=" + isDelete + ", createTime=" + createTime + ", baseSupplier=" + baseSupplier
+				+ "]";
+	}
 }

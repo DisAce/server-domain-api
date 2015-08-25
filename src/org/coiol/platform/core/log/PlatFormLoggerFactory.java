@@ -28,17 +28,18 @@ import java.util.Map;
  * @author master@coiol.com
  */
 public class PlatFormLoggerFactory {
-    private static final Map<Class,PlatFormLogger> CACHE = new HashMap<>();
+    private static final Map<Class<?>,PlatFormLogger> CACHE = new HashMap<Class<?>,PlatFormLogger>();
     
     private PlatFormLoggerFactory() {
     }
 
-    public static PlatFormLogger getPlatFormLogger(Class clazz) {
+    public static PlatFormLogger getPlatFormLogger(Class<?> clazz) {
+    	
         PlatFormLogger log = CACHE.get(clazz);
 
         if(log == null){
             synchronized(clazz) {
-                if(!CACHE.containsKey(clazz)) {
+				if (!CACHE.containsKey(clazz)) {
                     log = new PlatFormLoggerImpl(clazz);
                     CACHE.put(clazz, log);
                 }else{

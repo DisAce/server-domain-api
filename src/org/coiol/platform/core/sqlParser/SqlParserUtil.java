@@ -34,7 +34,7 @@ public class SqlParserUtil
 
 	    sql = sql + " ENDOFSQL";
 
-	    Queue queue = cutByBracket(sql);
+	    Queue<SqlSegment> queue = cutByBracket(sql);
 
 	    String result = parseQueueToSql(queue);
 	    System.out.println("SQL:" + result);
@@ -69,17 +69,17 @@ public class SqlParserUtil
 
 	  public static String parseSql(String sql)
 	  {
-	    LinkNode cutSqls = cutSql(
+	    LinkNode<SqlSegment> cutSqls = cutSql(
 	      sql, 
 	      "(SELECT | FROM | JOIN | @LJ | @RJ | @LOJ |@ROJ | @IJ | WHERE | ORDER BY | GROUP BY | CONNECT BY )(.+)( FROM | JOIN | @LJ| @RJ | @LOJ |@ROJ | @IJ | WHERE | ORDER BY | GROUP BY | CONNECT BY | ENDOFSQL)", 
 	      " ");
 
-	    LinkNode cur = cutSqls;
-	    List<String> tableNames = new LinkedList();
-	    Map tableAls = new HashMap();
+	    LinkNode<SqlSegment> cur = cutSqls;
+	    List<String> tableNames = new LinkedList<String>();
+	    Map<String, String> tableAls = new HashMap<String, String>();
 	    boolean hasWhere = false;
 	    SqlSegment whereSeg = null;
-	    LinkNode lastSeg = null;
+	    LinkNode<SqlSegment> lastSeg = null;
 	    while (cur != null)
 	    {
 	      SqlSegment curSeq = (SqlSegment)cur.getNode();
@@ -191,7 +191,7 @@ public class SqlParserUtil
 	    }
 	    else
 	    {
-	      LinkNode sqlSegment = new LinkNode();
+	      LinkNode<SqlSegment> sqlSegment = new LinkNode<SqlSegment>();
 	      SqlSegment newWhereSeg = new SqlSegment("( WHERE )(.+)( ENDOFSQL| GROUP BY | ORDER BY | CONNECT BY )", " ");
 	      String tables = "";
 	      if (tableNames.size() > 0)
@@ -235,11 +235,11 @@ public class SqlParserUtil
 	  {
 	    String theEnd = "";
 	    String temp = sql + " ENDOFSQL";
-	    LinkNode sqlNode = new LinkNode();
-	    LinkNode lastNode = null;
+	    LinkNode<SqlSegment> sqlNode = new LinkNode<SqlSegment>();
+	    LinkNode<SqlSegment> lastNode = null;
 	    while (!"ENDOFSQL".equals(theEnd))
 	    {
-	      LinkNode curLink = new LinkNode();
+	      LinkNode<SqlSegment> curLink = new LinkNode<SqlSegment>();
 	      SqlSegment ss = new SqlSegment(segStr, bodySegStr);
 	      ss.parse(temp);
 	      theEnd = ss.getEnd().trim();
@@ -274,11 +274,11 @@ public class SqlParserUtil
 	    sql = sql + " ENDOFSQL";
 
 	    String temp = sql.replace("(", " @L ").replace(")", " @R ").toUpperCase();
-	    LinkNode sqlNode = new LinkNode();
-	    LinkNode lastNode = null;
+	    LinkNode<SqlSegment> sqlNode = new LinkNode<SqlSegment>();
+	    LinkNode<SqlSegment> lastNode = null;
 	    while (!"ENDOFSQL".equals(theEnd))
 	    {
-	      LinkNode curLink = new LinkNode();
+	      LinkNode<SqlSegment> curLink = new LinkNode<SqlSegment>();
 	      SqlSegment ss = new SqlSegment("(SELECT | @L | @R)(.+)( @L | @R | ENDOFSQL)", "[,]");
 	      ss.parse(temp);
 	      theEnd = ss.getEnd().trim();
@@ -297,9 +297,9 @@ public class SqlParserUtil
 
 	    }
 
-	    LinkNode cur = sqlNode;
-	    LinkNode last = null;
-	    Queue queue = new LinkedBlockingQueue();
+	    LinkNode<SqlSegment> cur = sqlNode;
+	    LinkNode<SqlSegment> last = null;
+	    Queue<SqlSegment> queue = new LinkedBlockingQueue<SqlSegment>();
 	    boolean hasLr = true;
 	    while (hasLr)
 	    {

@@ -12,7 +12,6 @@ package org.coiol.platform.core.util;
 
 import org.coiol.platform.core.log.PlatFormLogger;
 import org.coiol.platform.core.log.PlatFormLoggerFactory;
-import org.coiol.platform.core.sqlParser.SqlExcutePlugin;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /** 
@@ -29,7 +28,7 @@ public class DataSources extends AbstractRoutingDataSource
 	  private static final PlatFormLogger logger = PlatFormLoggerFactory.getPlatFormLogger(DataSources.class);
 	  protected Object determineCurrentLookupKey()
 	  {
-	    this.logger.info("---------------------当前数据源 " + (
+	    DataSources.logger.info("---------------------当前数据源 " + (
 	      DataSourceSwitch.getDataSourceType() == null ? "Default" : DataSourceSwitch.getDataSourceType()) + 
 	      "----------------------", new Object[0]);
 	    return DataSourceSwitch.getDataSourceType();

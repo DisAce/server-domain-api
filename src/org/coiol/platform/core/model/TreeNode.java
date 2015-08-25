@@ -176,16 +176,17 @@ public class TreeNode
 
 	  public TreeNode(LinkedList<TreeNode> tns)
 	  {
-	    LinkedHashMap tnMaps = new LinkedHashMap();
+	    LinkedHashMap<String, TreeNode> tnMaps = new LinkedHashMap<String, TreeNode>();
 	    for (TreeNode n : tns)
 	    {
 	      tnMaps.put(castString(n.getId()), n);
 	    }
 
-	    List<String> removeNotes = new ArrayList();
+	    List<String> removeNotes = new ArrayList<String>();
 
-	    Set tnKey = tnMaps.keySet();
-	    Iterator it = tnKey.iterator();
+	    Set<String> tnKey = tnMaps.keySet();
+	    
+	    Iterator<String> it = tnKey.iterator();
 	    TreeNode tn;
 	    while (it.hasNext())
 	    {
@@ -198,7 +199,7 @@ public class TreeNode
 	      removeNotes.add(id);
 	      if (((TreeNode)tnMaps.get(parentId)).getChildren() == null)
 	      {
-	        ((TreeNode)tnMaps.get(parentId)).setChildren(new LinkedList());
+	        ((TreeNode)tnMaps.get(parentId)).setChildren(new LinkedList<TreeNode>());
 	      }
 
 	      ((TreeNode)tnMaps.get(parentId)).getChildren().add(tn);
@@ -210,9 +211,9 @@ public class TreeNode
 	      tnMaps.remove(s);
 	    }
 
-	    Iterator it2 = tnKey.iterator();
+	    Iterator<String> it2 = tnKey.iterator();
 	    setId("-1");
-	    setChildren(new LinkedList());
+	    setChildren(new LinkedList<TreeNode>());
 	    while (it2.hasNext())
 	    {
 	      getChildren().add((TreeNode)tnMaps.get(it2.next()));
@@ -233,7 +234,7 @@ public class TreeNode
 
 	  public LinkedList<TreeNode> getSelectTreeList(String preStr)
 	  {
-	    LinkedList result = new LinkedList();
+	    LinkedList<TreeNode> result = new LinkedList<TreeNode>();
 	    String preStrTmp = preStr + "&nbsp;&nbsp;&nbsp;&nbsp;";
 	    if (getChildren() != null)
 	    {

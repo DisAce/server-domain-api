@@ -49,7 +49,7 @@ public class PrintSqlPlugin  implements Interceptor
 	    try
 	    {
 	      Object parameterObject = boundSql.getParameterObject();
-	      List param = new LinkedList();
+	      List<Object> param = new LinkedList<Object>();
 	      addParam(param, mappedStatement, boundSql, parameterObject);
 	      String sql = formatSql(boundSql.getSql());
 	      if ((sql != null) && (sql.length() > 0))
@@ -79,10 +79,10 @@ public class PrintSqlPlugin  implements Interceptor
 	    return invocation.proceed();
 	  }
 
-	  public void addParam(List params, MappedStatement mappedStatement, BoundSql boundSql, Object parameterObject)
+	  public void addParam(List<Object> params, MappedStatement mappedStatement, BoundSql boundSql, Object parameterObject)
 	    throws SQLException
 	  {
-	    List parameterMappings = boundSql.getParameterMappings();
+	    List<?> parameterMappings = boundSql.getParameterMappings();
 	    if (parameterMappings != null)
 	    {
 	      Configuration configuration = mappedStatement.getConfiguration();

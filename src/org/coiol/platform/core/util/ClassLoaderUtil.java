@@ -11,8 +11,7 @@ import org.coiol.platform.core.log.PlatFormLoggerFactory;
 
 public class ClassLoaderUtil {
 
-	private static final PlatFormLogger logger = PlatFormLoggerFactory
-			.getPlatFormLogger(ClassLoaderUtil.class);
+	private static final PlatFormLogger logger = PlatFormLoggerFactory.getPlatFormLogger(ClassLoaderUtil.class);
 
 	public ClassLoaderUtil() {
 	}

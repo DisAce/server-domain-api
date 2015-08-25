@@ -5,8 +5,7 @@ package org.coiol.platform.core.model;
 import java.io.Serializable;
 
 
-public class BaseRoles 
-	implements Serializable
+public class BaseRoles implements Serializable
 {
 
 	/**  
@@ -18,9 +17,6 @@ public class BaseRoles
 	private String roleDesc;
 	private String createTime;
 
-	public BaseRoles()
-	{
-	}
 
 	public String getRoleId()
 	{
@@ -59,20 +55,11 @@ public class BaseRoles
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
-	
+
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseRoles [roleId=");
-        builder.append(roleId);
-        builder.append(", roleName=");
-        builder.append(roleName);
-        builder.append(", roleDesc=");
-        builder.append(roleDesc);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseRoles [roleId=" + roleId + ", roleName=" + roleName + ", roleDesc=" + roleDesc + ", createTime="
+				+ createTime + "]";
+	}
+	
 }

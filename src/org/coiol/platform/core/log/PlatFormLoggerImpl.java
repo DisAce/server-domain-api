@@ -33,10 +33,11 @@ import org.slf4j.Marker;
 class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     private static final long serialVersionUID = 1L;
     //默认使用中文日志输出，在PropertyHolder类加载完配置之后，会根据配置文件的指定重新设置locale的值
+    
     private static Locale locale = Locale.CHINA;
     private Logger log = null;
     
-    public PlatFormLoggerImpl(Class clazz){
+    public PlatFormLoggerImpl(Class<?> clazz){
         log = LoggerFactory.getLogger(clazz);
     }
     @Override

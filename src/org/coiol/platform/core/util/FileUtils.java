@@ -52,6 +52,7 @@ import org.springframework.util.Assert;
  * @author 杨尚川
  */
 public class FileUtils {
+	
     private static final PlatFormLogger LOG = PlatFormLoggerFactory.getPlatFormLogger(FileUtils.class);
         
     /**

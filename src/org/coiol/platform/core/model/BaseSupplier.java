@@ -77,27 +77,11 @@ public class BaseSupplier implements Serializable {
 	public void setIsDelete(Integer isDelete) {
 		this.isDelete = isDelete;
 	}
-
+	
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseSupplier [id=");
-        builder.append(id);
-        builder.append(", name=");
-        builder.append(name);
-        builder.append(", address=");
-        builder.append(address);
-        builder.append(", telephone=");
-        builder.append(telephone);
-        builder.append(", remarks=");
-        builder.append(remarks);
-        builder.append(", isDelete=");
-        builder.append(isDelete);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseSupplier [id=" + id + ", name=" + name + ", address=" + address + ", telephone=" + telephone
+				+ ", remarks=" + remarks + ", isDelete=" + isDelete + ", createTime=" + createTime + "]";
+	}
 
 }

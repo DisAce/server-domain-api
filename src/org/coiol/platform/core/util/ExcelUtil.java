@@ -16,11 +16,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import org.apache.commons.logging.LogFactory;
+
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.util.HSSFColor;
@@ -44,10 +42,6 @@ public class ExcelUtil
 {
 
 	private static final PlatFormLogger log = PlatFormLoggerFactory.getPlatFormLogger(ExcelUtil.class);
-	  private static final int HEAD_CELL_STYLE = 1;
-	  private static final int DATA_CELL_STYLE = 2;
-	  private static final int sheetMaxRow = 1000000;
-	  private static Map<String, ExcelUtil> instances = new HashMap();
 
 	  public Workbook exportSheet(Workbook workbook, String sheetName, List<Map> rs, String[] columnNames, String[] columnCodes)
 	  {

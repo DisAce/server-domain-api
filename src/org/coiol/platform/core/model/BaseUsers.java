@@ -8,11 +8,7 @@ package org.coiol.platform.core.model;
 
 import java.io.Serializable;
 import java.util.Date;
-
-import org.coiol.platform.core.jackjson.CustomDateTimeSerializer;
-
-import com.alibaba.fastjson.annotation.JSONType;
-public class BaseUsers  implements Serializable
+public class BaseUsers implements Serializable
 {
 
 	/**  
@@ -176,38 +172,13 @@ public class BaseUsers  implements Serializable
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
-	
+
 	@Override
-    public String toString()
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BaseUsers [userId=");
-        builder.append(userId);
-        builder.append(", account=");
-        builder.append(account);
-        builder.append(", password=");
-        builder.append(password);
-        builder.append(", realName=");
-        builder.append(realName);
-        builder.append(", sex=");
-        builder.append(sex);
-        builder.append(", email=");
-        builder.append(email);
-        builder.append(", mobile=");
-        builder.append(mobile);
-        builder.append(", officePhone=");
-        builder.append(officePhone);
-        builder.append(", errorCount=");
-        builder.append(errorCount);
-        builder.append(", lastLoginTime=");
-        builder.append(lastLoginTime);
-        builder.append(", lastLoginIp=");
-        builder.append(lastLoginIp);
-        builder.append(", isAdmin=");
-        builder.append(isAdmin);
-        builder.append(", createTime=");
-        builder.append(createTime);
-        builder.append("]");
-        return builder.toString();
-    }
+	public String toString() {
+		return "BaseUsers [userId=" + userId + ", account=" + account + ", password=" + password + ", realName="
+				+ realName + ", sex=" + sex + ", email=" + email + ", mobile=" + mobile + ", officePhone=" + officePhone
+				+ ", errorCount=" + errorCount + ", lastLoginTime=" + lastLoginTime + ", lastLoginIp=" + lastLoginIp
+				+ ", isAdmin=" + isAdmin + ", createTime=" + createTime + ", remark=" + remark + "]";
+	}
+	
 }

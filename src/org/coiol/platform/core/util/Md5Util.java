@@ -36,27 +36,7 @@ public class Md5Util
 	    int iD1 = iRet / 16;
 	    int iD2 = iRet % 16;
 	    return strDigits[iD1] + strDigits[iD2]; } 
-	  // ERROR //
-	  private static String byteToNum(byte bByte) {
-		return null; // Byte code:
-	    //   0: iload_0
-	    //   1: istore_1
-	    //   2: getstatic 80	java/lang/System:out	Ljava/io/PrintStream;
-	    //   5: new 55	java/lang/StringBuilder
-	    //   8: dup
-	    //   9: ldc 86
-	    //   11: invokespecial 61	java/lang/StringBuilder:<init>	(Ljava/lang/String;)V
-	    //   14: iload_1
-	    //   15: invokevirtual 88	java/lang/StringBuilder:append	(I)Ljava/lang/StringBuilder;
-	    //   18: invokevirtual 68	java/lang/StringBuilder:toString	()Ljava/lang/String;
-	    //   21: invokevirtual 91	java/io/PrintStream:println	(Ljava/lang/String;)V
-	    //   24: iload_1
-	    //   25: ifge +9 -> 34
-	    //   28: wide
-	    //   34: iload_1
-	    //   35: invokestatic 96	java/lang/String:valueOf	(I)Ljava/lang/String;
-	    //   38: areturn 
-		  } 
+	  
 		  
 	  private static String byteToString(byte[] bByte) { StringBuffer sBuffer = new StringBuffer();
 	    for (int i = 0; i < bByte.length; i++) {
