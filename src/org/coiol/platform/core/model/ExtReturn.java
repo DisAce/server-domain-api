@@ -2,36 +2,47 @@
 
 package org.coiol.platform.core.model;
 
-
+/**
+ *  系统返回信息扩展
+ *
+ */
 public class ExtReturn
 {
 
+	/**
+	 * 成功状态
+	 */
 	private boolean success;
-	private Object msg;
+	
+	/**
+	 * 返回码
+	 */
+	private int resultCode;
+	
+	/**
+	 * 附加信息
+	 */
 	private Object o;
 
-	public ExtReturn()
-	{
-	}
 
-	public ExtReturn(boolean success, Object msg)
+	public ExtReturn(boolean success, int resultCode)
 	{
 		this.success = success;
-		this.msg = msg;
+		this.resultCode = resultCode;
 		o = "";
 	}
 
-	public ExtReturn(boolean success, Object msg, Object other)
+	public ExtReturn(boolean success, int resultCode, Object other)
 	{
 		this.success = success;
-		this.msg = msg;
+		this.resultCode = resultCode;
 		o = other;
 	}
 
-	public ExtReturn(Object errormsg)
+	public ExtReturn(int _resultCode)
 	{
 		success = false;
-		msg = errormsg;
+		resultCode = _resultCode;
 		o = "";
 	}
 
@@ -45,14 +56,12 @@ public class ExtReturn
 		this.success = success;
 	}
 
-	public Object getMsg()
-	{
-		return msg;
+	public int getResultCode() {
+		return resultCode;
 	}
 
-	public void setMsg(Object msg)
-	{
-		this.msg = msg;
+	public void setResultCode(int resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	public Object getO()

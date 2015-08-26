@@ -19,7 +19,7 @@ public interface ResultCode
 	/**
 	 * 暂不支持此业务
 	 */
-	int NOT_SUPPORT_NOW = -999;
+	int FAILED = -999;
 
 	/**
 	 * PASS_SERVICE_CODE
@@ -42,142 +42,263 @@ public interface ResultCode
 	int OTHER_SERVER_ERROR = 20000;
 
 	/**
-	 * 非法的servlet请求
+	 * 用户对象为空
 	 */
-	int ERROR_REQUEST_INTERFACE = 20001;
+	int USER_IS_NULL = 22000;
+	
+	/**
+	 * 用户ID为空
+	 */
+	int USER_ID_IS_NULL = 40000;
+	
+	/**
+	 * 用户名为空
+	 */
+	int USERNAME_IS_NULL = 22022;
+	
+	/**
+	 * 加密密码为空
+	 */
+	int USER_PASSWORD_IS_NULL = 340086;
+	
+	/**
+	 * 新密码为空
+	 */
+	int NEW_PASSWORD_IS_NULL = 340096;
+	
+	/**
+	 * 确认密码不能为空
+	 */
+	int CONFIRM_PASSWORD_IS_NULL = 340106;
+	
+	/**
+	 * 两次输入的密码不一致
+	 */
+	int TWO_PASSWORD_IS_NULL = 340116;
+	
+	/**
+	 * 修改密码成功
+	 */
+	int MODIFY_PASSWORD_SUCCESS = 340126;
+	
+	/**
+	 * 修改密码失败
+	 */
+	int MODIFY_PASSWORD_FAILED = 340136;
+	
+	/**
+	 * 验证码为空
+	 */
+	int VERIFY_CODE_IS_NULL = 600025;
+	
+	/**
+	 * 验证码失效
+	 */
+	int VERIFY_CODE_IS_INVAL = 600026;
+	
+	/**
+	 * 验证码不正确
+	 */
+	int VERIFY_CODE_IS_FAILD = 600036;
+	
+	/**
+	 * 用户名或密码错误
+	 */
+	int USER_OR_PASSWORD_IS_FAILD = 350086;
+	
+	/**
+	 * 注册邮箱为空
+	 */
+	int REGISTER_USER_EMAIL_IS_NULL = 20001;
 
 	/**
-	 * 图书借阅--借阅过期
+	 * 发送邮件失败
 	 */
-	int BORROW_BOOK_OVERDUE = 20002;
+	int SEND_EMAIL_FAILED = 25341;
+	
+	/**
+	 * 发送邮件成功
+	 */
+	int SEND_EMAIL_SUCCESS = 25340;
+	
+	/**
+	 * 不能删除自己的帐号
+	 */
+	int NOT_DELETE_CURRENT_COUNT = 25440;
+	
+	/**
+	 * 帐号未被注册
+	 */
+	int ACCOUNT_IS_NOT_REGISTER = 25544;
+	
+	/**
+	 * 帐号已被注册
+	 */
+	int ACCOUNT_IS_REDIST_REGISTER = 25558;
+	
+	/** ####################系统字段######################### **/
+	
 
 	/**
-	 * 接口并发数超过限制
+	 * 系统字段不能为空
 	 */
-	int INTERFACE_LIMITED_ERROR = 20003;
+	int SYSTEM_FIELD_IS_NULL = 90003;
+	
+	/**
+	 * 系统字段名称不能为空
+	 */
+	int SYSTEM_FIELD_NAME_IS_NULL = 90004;
+	
+	/**
+	 * 系统字段值不能为空
+	 */
+	int SYSTEM_FIELD_VALUE_IS_NULL = 90005;
+	
+	/**
+	 * 系统字段值不能为空
+	 */
+	int SYSTEM_FIELD_DISPLAY_IS_NULL = 90006;
+	
+	/**
+	 * 系统主键不能为空
+	 */
+	int SYSTEM_PRIMARY_KEY_IS_NULL = 90007;
 
+	
+	/** ####################系统文件上传######################### **/
+	
+	
 	/**
 	 * 数据逻辑异常
 	 */
 	int DATA_LOGIC_ERROR = 20030;
 
 	/**
-	 * cmp模型错误
+	 * 磁盘空间已满
 	 */
-	int CMP_MODEL_ERROR = 20100;
+	int DISK_SPACE_IS_FULL = 20100;
+
+	
+	/** ####################系统订单######################### **/
+	
+	
+	
+	/**
+	 * 订单金额不能为空
+	 */
+	int ORDER_AMOUNT_IS_NULL = 20103;
 
 	/**
-	 * 报文格式错误
+	 * 供应商单价不能为空
 	 */
-	int MESSAGE_FORMAR_ERROR = 20103;
+	int SUPPLIERS_PRICE_IS_NULL = 20104;
 
 	/**
-	 * 未查询到在线用户
+	 * 订单总只数不能为空
 	 */
-	int NO_QUEREY_THE_ONLINE_USER = 20104;
+	int ORDER_TOTAL_NUM_IS_NULL = 20105;
 
 	/**
-	 * 分配查询凭证失败
+	 * 进货单信息保存成功
 	 */
-	int QUERY_ARTIFACT_FAILED = 20105;
+	int JHDS_INFO_SAVE_SUCCESS = 20106;
 
 	/**
-	 * 数据库错误
+	 * 进货单信息保存失败
 	 */
-	int DATABASE_ERROR = 20106;
+	int JHDS_INFO_SAVE_FAILED = 20107;
 
 	/**
-	 * 系统错误
+	 * 请选择要删除的记录
 	 */
-	int SYSTEM_ERROR = 20107;
+	int PLEASE_CHOOSE = 20108;
 
 	/**
-	 * 凭证已失效
+	 * 进货单信息删除成功
 	 */
-	int ARTIFACT_EXPIRED = 20108;
+	int JHDS_INFO_DELETE_SUCCESS = 20109;
 
 	/**
-	 * 密码不符合规则
+	 * 进货单信息删除失败
 	 */
-	int PASSWORD_DOES_NOT_RULE = 20109;
+	int JHDS_INFO_DELETE_FAILED = 320000;
+
+	/** ####################系统角色######################### **/
+	
+	/**
+	 *角色ID不能为空
+	 */
+	int ROLE_ID_IS_NULL = 320003;
 
 	/**
-	 * 外站ID不存在配置表中
+	 * 角色不能为空
 	 */
-	int CPID_NO_EXIST = 320000;
+	int ROLE_NAME_IS_NULL = 320002;
 
 	/**
-	 * 图书ID与外站id不匹配
+	 * 选择的资源不能为空
 	 */
-	int BOOKID_MATCH_CPID = 320003;
+	int CHOOSE_RESOURCES_IS_NULL = 20110;
+
+	
+	/** ####################系统模块######################### **/
+	
+	/**
+	 * 模块不能为空
+	 */
+	int MODULE_NAME_IS_NULL = 20111;
 
 	/**
-	 * 外站密钥校验不通过
+	 * 模块主键不能为空
 	 */
-	int SERCRET_KEY_INVALID = 320002;
+	int MODULE_KEY_IS_NULL = 20112;
+
+	/** ####################供货商信息######################### **/
+	
+	/**
+	 * 供应商主键不能为空Supplier primary key can not be empty
+	 */
+	int SUPPLIER_PRIMARY_KEY_IS_NULL = 20113;
 
 	/**
-	 * 用户已注册移动通行证
+	 * 供应商数据处于使用状态，不能删除
 	 */
-	int PASSPORT_HAS_REGISTERED = 20110;
+	int SUPPLIER_STATUS_USEING_NOT_DELETE = 20114;
 
 	/**
-	 * 调用sso接口失败
+	 * 店面名称不能为空
 	 */
-	int CALL_SSO_INTERFACE_FAIL = 20111;
+	int STORE_NAME_IS_NULL = 20115;
 
 	/**
-	 * 未查询到此凭证
+	 * 店面地址不能为空
 	 */
-	int DOES_NOT_QUERY = 20112;
+	int STORE_ADDRESS_IS_NULL = 20118;
 
 	/**
-	 * 通行证不存在
+	 * 店面联系方式不能为空
 	 */
-	int PASSPORTID_NOT_EXIST = 20113;
+	int STORE_PHONE_IS_NULL = 20119;
 
 	/**
-	 * 密码错误
+	 * 公司名称不能为空
 	 */
-	int PASSWORD_IS_ERROR = 20114;
+	int COMPANT_NAME_IS_NULL = 20120;
 
 	/**
-	 * 鉴权场景系统不支持
+	 * 公司地址不能为空
 	 */
-	int AUTHSCENE_PROMOTION_INVALID = 20115;
+	int COMPANT_ADDRESS_IS_NULL = 22221;
 
 	/**
-	 * 请求消息发布实体的域名不能为空
+	 * 公司联系方式不能为空
 	 */
-	int ASDOMAIN_IS_NOT_MATCHING = 20118;
+	int COMPANT_PHONE_IS_NULL = 22222;
 
 	/**
-	 * 入参校验失败
+	 * 单价不能为空
 	 */
-	int PARAMTER_CHECK_FAIL = 20119;
-
-	/**
-	 * 账号被锁定
-	 */
-	int VGOP_ACCOUNT_LOCKED = 20120;
-
-	/* ******系统错误***end************* */
-
-	/* ******非CMWAP 用户登录************* */
-	/**
-	 * 用户登录状态为空
-	 */
-	int USERTOKEN_ISNULL = 22221;
-
-	/**
-	 * 用户登录状态标识usertoken为空
-	 */
-	int USERTOKEN_ID_ISNULL = 22222;
-
-	/**
-	 * 用户登录状态标识IP为空
-	 */
-	int USERTOKEN_IP_ISNULL = 22223;
+	int PRICE_IS_NULL = 22223;
 
 	/**
 	 * 无用户登录状态记录删除
@@ -1786,10 +1907,6 @@ public interface ResultCode
 	 */
 	int EMAIL_IS_ALREADY_BIND = 25340;
 
-	/**
-	 * 发送邮件失败
-	 */
-	int SEND_EMAIL_FAILED = 25341;
 
 	/**
 	 * 邮箱状态不是待激活，不能激活
@@ -4264,10 +4381,6 @@ public interface ResultCode
 	 */
 	int BATCH_DEL_USER_GROUP_MEM_IS_FAIL = 600025;
 
-	/**
-	 * 验证码失效
-	 */
-	int VERIFY_CODE_IS_INVAL = 600026;
 
 	/**
 	 * 平台验证码和传入验证码不符合
@@ -4390,10 +4503,7 @@ public interface ResultCode
 	 */
 	int GET_VERIFYCODE_NEXTTIME_LIMIT = 340085;
 
-	/**
-	 * 加密密码为空
-	 */
-	int USER_PASSWORD_IS_NULL = 340086;
+	
 
 	/**
 	 * 验证码为空
@@ -6295,11 +6405,6 @@ public interface ResultCode
 	 * 阅读号和非手机号的用户名都为空
 	 */
 	int READNUM_AND_USERNAME_ALL_NONE = 22761;
-
-	/**
-	 * 非手机号的用户名为空
-	 */
-	int USERNAME_IS_NULL = 22762;
 
 	/**
 	 * 手机号码和飞信编号不能同时为空
