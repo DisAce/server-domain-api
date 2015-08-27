@@ -22,6 +22,7 @@ package org.coiol.platform.core.log;
 
 import java.io.Serializable;
 import java.util.Locale;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
@@ -59,7 +60,7 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
         }
         return locale.getLanguage().equalsIgnoreCase(specifyLocale.getLanguage());
     }
-    
+	  
     private static String buildLogContextInfo()
 	  {
 	    long threadId = Thread.currentThread().getId();
@@ -181,21 +182,22 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
 
     @Override
     public void debug(String msg) {
-        debug(msg, Locale.CHINA);
+    	debug(msg, Locale.CHINA);
     }
     @Override
     public void debug(String msg, Locale locale) {
-        if(shouldOutput(locale)){
+    	if(shouldOutput(locale)){
             log.debug(msg);
         }
     }
     @Override
     public void debug(String format, Object arg) {
-        debug(format, arg, Locale.CHINA);
+       
+    	debug(format, arg, Locale.CHINA);
     }
     @Override
     public void debug(String format, Object arg, Locale locale) {
-        if(shouldOutput(locale)){
+    	if(shouldOutput(locale)){
             log.debug(format, arg);
         }
     }
@@ -641,4 +643,5 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     public boolean isErrorEnabled(Marker marker) {
         return log.isErrorEnabled(marker);
     }
+    
 }

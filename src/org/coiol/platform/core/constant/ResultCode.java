@@ -15,6 +15,21 @@ public interface ResultCode
 	 * 成功标识
 	 */
 	int SUCCESS = 200;
+	
+	/**
+	 * 失败标识
+	 */
+	String FALSE = "00";
+	
+	/**
+	 * 空标识
+	 */
+	int NULL = 0;
+	
+	/**
+	 * 成功标识
+	 */
+	String TRUE = "01";
 
 	/**
 	 * 暂不支持此业务

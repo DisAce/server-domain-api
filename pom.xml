@@ -168,7 +168,7 @@
             <version>1.2.16</version>
             <scope>runtime</scope>
         </dependency>
-       
+        
           <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -216,12 +216,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-instrument-tomcat</artifactId>
-            <version>${org.springframework-version}</version>
-        </dependency>
-        
-         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-messaging</artifactId>
             <version>${org.springframework-version}</version>
         </dependency>
         
@@ -296,35 +290,6 @@
             </exclusions>
         </dependency>
         
-        <dependency>
-    		<groupId>asm</groupId>
-    		<artifactId>asm</artifactId>
-    		<version>${asm.version}</version>
-		</dependency>
-        
-        <dependency>
-			<groupId>com.jolbox</groupId>
-			<artifactId>bonecp</artifactId>
-			<version>${bonecp.version}</version>
-		</dependency>
-		
-        <dependency>
-			<groupId>com.jolbox</groupId>
-			<artifactId>bonecp-spring</artifactId>
-			<version>${bonecp-spring.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>${c3p0.version}</version>
-		</dependency>
-
-         <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>${freemarker.version}</version>
-        </dependency>
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
@@ -409,19 +374,6 @@
             </exclusions>
         </dependency>
         
-         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>${quartz.version}</version>
-        </dependency>
-        
-        <!-- AspectJ -->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>${org.aspectj-version}</version>
-        </dependency>
-        
         <dependency>
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
@@ -453,18 +405,6 @@
       		<version>${jasypt-spring31.version}</version>
       		<scope>compile</scope>
     	</dependency>
-    	
-    	<dependency>
-            <groupId>com.github.penggle</groupId>
-            <artifactId>kaptcha</artifactId>
-            <version>${kaptcha.version}</version>
-        </dependency>
-        
-        <dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>${mail.version}</version>
-		</dependency>
         
         <dependency>
 			<groupId>redis.clients</groupId>
@@ -488,6 +428,16 @@
     		<groupId>com.cloudhopper.proxool</groupId>
     		<artifactId>proxool</artifactId>
     		<version>${proxool.version}</version>
+    		<exclusions>
+		         <exclusion>
+		              <groupId>geronimo-spec</groupId>
+  					  <artifactId>geronimo-spec-javamail</artifactId>
+		         </exclusion>
+		         <exclusion>
+		               <groupId>geronimo-spec</groupId>
+  					   <artifactId>geronimo-spec-jms</artifactId>
+		         </exclusion>
+		     </exclusions>
 		</dependency>
 		
 		<dependency>
@@ -496,67 +446,7 @@
     		<version>${proxool-cglib.version}</version>
 		</dependency>
 		
-		<dependency>
-    		<groupId>com.thoughtworks.xstream</groupId>
-    		<artifactId>xstream</artifactId>
-    		<version>${xstream.version}</version>
-		</dependency>
-		 <!-- @Inject -->
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>${javassist.version}</version>
-        </dependency>
-        <!-- Servlet -->
-        <dependency>
-      <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-    </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <!-- Test -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.7</version>
-            <scope>test</scope>
-        </dependency>
-       
     </dependencies>
-    
-    <repositories>
-        <!-- For testing against latest Spring snapshots -->
-        <repository>
-            <id>org.springframework.maven.snapshot</id>
-            <name>Spring Maven Snapshot Repository</name>
-            <url>http://maven.springframework.org/snapshot</url>
-            <releases><enabled>false</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-        <!-- For developing against latest Spring milestones -->
-        <repository>
-            <id>org.springframework.maven.milestone</id>
-            <name>Spring Maven Milestone Repository</name>
-            <url>http://maven.springframework.org/milestone</url>
-            <snapshots><enabled>false</enabled></snapshots>
-        </repository>
-    </repositories>
     <build>
         <plugins>
             <plugin>
