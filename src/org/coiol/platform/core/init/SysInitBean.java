@@ -13,7 +13,9 @@ package org.coiol.platform.core.init;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
 import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.ServletContextAware;
@@ -37,11 +39,11 @@ public class SysInitBean implements InitializingBean, ServletContextAware
 	  {
 	    if (this.initBean != null)
 	    {
-	      Map map = this.initBean.toMap();
+	      Map<?, ?> map = this.initBean.toMap();
 	      if (map != null)
 	      {
-	        Set initMapSet = map.keySet();
-	        Iterator it = initMapSet.iterator();
+	        Set<?> initMapSet = map.keySet();
+	        Iterator<?> it = initMapSet.iterator();
 	        while (it.hasNext())
 	        {
 	          String key = (String)it.next();

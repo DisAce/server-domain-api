@@ -64,16 +64,10 @@ class PlatFormLoggerImpl implements PlatFormLogger,Serializable{
     private static String buildLogContextInfo()
 	  {
 	    long threadId = Thread.currentThread().getId();
-	    String staff = null;
-	    LogContext logContext = LogContextHolder.getLogContext();
-	    if (logContext != null) {
-	      staff = logContext.getStaff();
-	    }
+	    
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("server-domain-api-logger:threadId=");
 	    sb.append(threadId);
-	    sb.append(",staff=");
-	    sb.append(staff);
 	    sb.append(",info=");
 	    return sb.toString();
 	  }

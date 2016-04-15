@@ -65,6 +65,9 @@ public class ExtGridReturn
 	public void setRecords(int records) {
 		this.records = records;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "ExtGridReturn [total=" + total + ", page=" + page + ", records=" + records + ", rows=" + rows + "]";
+	}
 }
